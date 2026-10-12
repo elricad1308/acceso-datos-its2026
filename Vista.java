@@ -24,7 +24,7 @@ public class Vista extends JFrame {
         botonAbrir.addMouseListener(new MouseAdapter(){
             public void mouseClicked(MouseEvent evt) {
                 // El codigo del listener va aqui
-                chooser = new JFileChooser();
+                chooser = new JFileChooser(".");
                 int decision = chooser.showOpenDialog(null);
                 
                 if (decision == JFileChooser.APPROVE_OPTION) {
@@ -43,15 +43,15 @@ public class Vista extends JFrame {
         
         botonGuardar.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                chooser = new JFileChooser();
+                chooser = new JFileChooser(".");
                 int decision = chooser.showSaveDialog(null);
                 
                 if (decision == JFileChooser.APPROVE_OPTION) {
                     String nombreArchivo =
                       chooser.getSelectedFile().getAbsolutePath();
-                    List<String> contenido = List.of(editor.getText());
+                    List<String> contenido = List.of(editor.getText().split("\n"));
                     
-                    Modelo modelo = new ModeloArchivo();
+                    Modelo modelo = new ModeloBinario();
                     modelo.escribir(nombreArchivo, contenido);
                 }
             }
