@@ -31,14 +31,23 @@ public class VistaVideo extends JFrame {
         botonGuardar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
-                JOptionPane.showMessageDialog(null, "Test");
+                String titulo = fieldTitulo.getText();
+                int duracion = Integer.parseInt(fieldDuracion.getText());
+
+                new ModeloBD().insertar(titulo, duracion);
+
+                JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
             }
         });
 
         botonVer.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
+                int id_video = Integer.parseInt(fieldId.getText());
 
+                new ModeloBD().eliminar(id_video);
+
+                JOptionPane.showMessageDialog(null, "Video eliminado");
             }
         });
 

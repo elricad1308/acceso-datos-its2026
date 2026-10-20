@@ -30,7 +30,7 @@ public class Vista extends JFrame {
                 if (decision == JFileChooser.APPROVE_OPTION) {
                     String nombreArchivo = 
                       chooser.getSelectedFile().getAbsolutePath();
-                    Modelo modelo = new ModeloArchivo();
+                    Modelo modelo = new ModeloBD();
                     List<String> contenido = 
                       modelo.leer(nombreArchivo);
                     String texto = "";
