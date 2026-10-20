@@ -34,7 +34,7 @@ public class VistaVideo extends JFrame {
                 String titulo = fieldTitulo.getText();
                 int duracion = Integer.parseInt(fieldDuracion.getText());
 
-                new ModeloBD().insertar(titulo, duracion);
+                new ModeloSQLite().insertar(titulo, duracion);
 
                 JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
             }

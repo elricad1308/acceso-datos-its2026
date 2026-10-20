@@ -17,6 +17,8 @@ public class ModeloBD implements Modelo {
 
     public int insertar(String titulo, int duracion) {
         // Primer paso: establecer la conexión 
+        
+
         try (Connection conexion = DriverManager.getConnection(CONNECTION_STRING, DB_USER, DB_PASS))
         {
             // Segundo paso: obtener un statement (para consultas estáticas)
